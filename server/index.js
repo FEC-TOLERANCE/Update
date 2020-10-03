@@ -13,9 +13,6 @@ app.use(express.static('/Users/sinamb/Documents/Programs/SinaService/client/dist
 
 app.get('/updates', (req, res) => {
   //run a function that creates 100 random objects
-  for (var i = 0; i < 100; i ++){
-
-  }
 
 })
 

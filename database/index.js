@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/fetcher', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/updater', {useNewUrlParser: true});
 
 let updateSchema = new mongoose.Schema({
   itemId: {
@@ -11,29 +11,22 @@ let updateSchema = new mongoose.Schema({
   pledgeAmount: Number,
   pledgeGoal: Number,
   creator: String,
-  headers: [{
-    headerId: String
-  }],
-  paragraphs: [{
-    paraId: String,
-  }]
+  header: String,
+  paragraph: String
 });
 
 let Updates = mongoose.model('Updates', updateSchema);
 
 let saveUpdate = (incoming) => {
-    var instance = new Updates({
+    return instance = new Updates({
       itemId: incoming.itemId,
       pledgeBackers: incoming.pledgeBackers,
       pledgeAmount: incoming.pledgeAmount,
       pledgeGoal: incoming.pledgeGoal,
       creator: incoming.creator,
-      headers: [{
-        headerId: incoming.headers
-      }],
-      paragraphs: [{
-        paraId: incoming.paragraphs,
-      }]
+      header: incoming.header,
+      paragraph: incoming.paragraph,
+
     })
     .save(err => {
       if (err) {
