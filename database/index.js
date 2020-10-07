@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/updater', {useNewUrlParser: true});
 
-var updateSchema = new mongoose.Schema({
+let updateSchema = new mongoose.Schema({
   itemId: {
     type: Number,
     unique: true
@@ -15,9 +15,9 @@ var updateSchema = new mongoose.Schema({
   paragraph: String
 });
 
-var Updates = mongoose.model('Updates', updateSchema);
+let Updates = mongoose.model('Updates', updateSchema);
 
-var saveUpdate = (incoming) => {
+let saveUpdate = (incoming) => {
     return instance = new Updates({
       itemId: incoming.itemId,
       pledgeBackers: incoming.pledgeBackers,
@@ -37,16 +37,9 @@ var saveUpdate = (incoming) => {
     })
 }
 
-var deleteUpdates = () => {
+const deleteUpdates = () => {
   return Updates.deleteMany({});
 }
 
-var retrieveUpdates = (incId) => {
-  return Updates.find({"itemId": incId});
-}
-
-
-
 module.exports.saveUpdate = saveUpdate;
 module.exports.deleteUpdates = deleteUpdates;
-module.exports.retrieveUpdates = retrieveUpdates;

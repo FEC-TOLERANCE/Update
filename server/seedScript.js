@@ -1,13 +1,13 @@
 
-var DB = require('/Users/sinamb/Documents/Programs/SinaService/database/index.js');
-var faker = require('faker');
+const DB = require('/Users/sinamb/Documents/Programs/SinaService/database/index.js');
+const faker = require('faker');
 
 function createUpdates() {
   var results = [];
   return DB.deleteUpdates()
     .then(() => {
       for (var i = 1; i < 101; i++) {
-        var instance = {
+        let instance = {
           itemId: i,
           pledgeBackers: 10 + i,
           pledgeAmount: 100 + i,
