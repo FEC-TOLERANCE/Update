@@ -1,5 +1,5 @@
 
-var DB = require('/Users/sinamb/Documents/Programs/SinaService/database/index.js');
+var DB = require('../database/index');
 var faker = require('faker');
 
 function createUpdates() {

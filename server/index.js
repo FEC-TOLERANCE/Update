@@ -3,17 +3,19 @@ var app = express()
 // app.use(bodyParser.json())
 var port = 3007;
 
-var DB = require('/Users/sinamb/Documents/Programs/SinaService/database/index.js');
+var DB = require('../database/index.js');
 
-app.use(express.static('/Users/sinamb/Documents/Programs/SinaService/client/dist'))
+app.use(express.static('../client/dist'))
 
 
 app.get('/updates/:itemId', (req, res) => {
   var itemId = req.params.itemId;
   DB.retrieveUpdates(itemId)
     .then( (updateInfo) => {
-      console.log(updateInfo);
-      res.send(updateInfo);
+      res.status(200).send(updateInfo);
+    })
+    .catch( (error) => {
+      res.send(error);
     })
 
 })

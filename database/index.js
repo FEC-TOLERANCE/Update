@@ -46,7 +46,5 @@ var retrieveUpdates = (incId) => {
 }
 
 
+module.exports = {saveUpdate, deleteUpdates, retrieveUpdates};
 
-module.exports.saveUpdate = saveUpdate;
-module.exports.deleteUpdates = deleteUpdates;
-module.exports.retrieveUpdates = retrieveUpdates;
