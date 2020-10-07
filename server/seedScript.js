@@ -1,5 +1,5 @@
 
-var DB = require('/Users/sinamb/Documents/Programs/SinaService/database/index.js');
+var DB = require('../database/index');
 var faker = require('faker');
 
 function createUpdates() {
@@ -16,7 +16,6 @@ function createUpdates() {
           header: faker.lorem.sentence(),
           paragraph: faker.lorem.paragraph(),
         }
-        console.log("One data instance created")
         results.push(DB.saveUpdate(instance));
       }
       return Promise.all(results);
@@ -25,6 +24,8 @@ function createUpdates() {
 
 createUpdates()
   .then(() => {
-    console.log("finished script")
     process.exit();
+  })
+  .catch((error) => {
+    return error;
   })
