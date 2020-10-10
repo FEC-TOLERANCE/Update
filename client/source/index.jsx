@@ -11,7 +11,7 @@ class App extends React.Component {
     }
 
   }
- 
+
   render () {
     return (<div>
       <h1>This is the Updates Component</h1>
@@ -19,4 +19,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('target'));
+ReactDOM.render(<App />, document.getElementById('updates'));

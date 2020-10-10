@@ -30,11 +30,19 @@ describe('API communication: ', () => {
         })
     });
 
-    test('400 error for invalid projectIds', () => {
-      app.get('/updates/101')
+    // test('400 error for invalid projectIds', () => {
+    //   app.get('/updates/101')
+    //     .then(response => {
+    //       expect(response.status).toEqual(400);
+    //     })
+    // });
+
+    test('Non numerical itemIds are reject', () => {
+      app.get('/updates/words')
         .then(response => {
-          expect(response.status).toBe(400);
+          expect(response.status).toEqual(400);
         })
     });
+
   });
 });
