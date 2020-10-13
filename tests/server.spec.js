@@ -1,6 +1,4 @@
-// import DB from "../database/index";
-// import server from "../server/index";
-// import client from "../client/source/index";
+
 var req = require("supertest")
 
 
@@ -9,15 +7,8 @@ describe('API communication: ', () => {
 
   describe('GET requests to /updates/:projectId', () => {
 
-    test('The database should get seeded with 100 entries', () => {
+    test('The database should get seeded with 100 valid entries', () => {
       app.get('/updates/100')
-        .then(response => {
-          expect(response.status).toBe(200);
-        })
-    });
-
-    test('Returns a 200 response for valid projectIDs', () => {
-      app.get('/updates/99')
         .then(response => {
           expect(response.status).toBe(200);
         })
@@ -29,13 +20,6 @@ describe('API communication: ', () => {
           expect(response.body.pledgeAmount).toEqual(105);
         })
     });
-
-    // test('400 error for invalid projectIds', () => {
-    //   app.get('/updates/101')
-    //     .then(response => {
-    //       expect(response.status).toEqual(400);
-    //     })
-    // });
 
     test('Non numerical itemIds are reject', () => {
       app.get('/updates/words')
