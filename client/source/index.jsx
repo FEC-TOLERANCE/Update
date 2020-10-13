@@ -11,12 +11,14 @@ class App extends React.Component {
     }
 
   }
- 
+
   render () {
     return (<div>
       <h1>This is the Updates Component</h1>
+    <h2>{this.state.header}</h2>
+    <p>{this.state.pragraph}</p>
     </div>)
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('target'));
+ReactDOM.render(<App />, document.getElementById('updates'));
