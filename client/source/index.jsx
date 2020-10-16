@@ -13,8 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var newId = window.location.href;
-    newId = newId.substring(newId.length - 3, newId.length-1);
+    var newId = window.location.href.split('/')[3];
     axios.get('http://localhost:3007/updates/' + newId)
       .then( (inc) => {
         console.log(inc.data)
