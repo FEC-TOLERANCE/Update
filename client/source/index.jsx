@@ -36,8 +36,8 @@ class App extends React.Component {
     return (
     <div className="project">
       <h1>Updates</h1>
-      <h2 classname="head">{this.state.header}</h2>
-      <p classname="para">{this.state.paragraph}</p>
+      <h2 className="head">{this.state.header}</h2>
+      <p className="para">{this.state.paragraph}</p>
     </div>
     )
   }
