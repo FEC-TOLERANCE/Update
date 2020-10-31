@@ -2,6 +2,7 @@ var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/source');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
+
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
@@ -17,7 +18,7 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
     ]
   }
 };

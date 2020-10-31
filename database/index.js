@@ -42,7 +42,9 @@ var deleteUpdates = () => {
 }
 
 var retrieveUpdates = (incId) => {
-  return Updates.find({"itemId": incId});
+  var item = Updates.find({"itemId": incId});
+  // console.log(item)
+  return item;
 }
 
 
