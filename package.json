@@ -8,7 +8,7 @@
     "dev:react": "webpack -d --watch",
     "seed": "node server/seedScript.js",
     "test": "jest",
-    "production": "webpack --mode production"
+    "production": "webpack --env prod"
   },
   "author": "test",
   "license": "ISC",
