@@ -12,7 +12,12 @@ var updateSchema = new mongoose.Schema({
   pledgeGoal: Number,
   creator: String,
   header: String,
-  paragraph: String
+  paragraph: String,
+  updateCount: Number,
+  dateOne: String,
+  dateTwo: String,
+  secondHeader: String,
+  secondParagraph: String,
 });
 
 var Updates = mongoose.model('Updates', updateSchema);
@@ -26,7 +31,11 @@ var saveUpdate = (incoming) => {
       creator: incoming.creator,
       header: incoming.header,
       paragraph: incoming.paragraph,
-
+      updateCount: incoming.updateCount,
+      dateOne: incoming.dateOne,
+      dateTwo: incoming.dateTwo,
+      secondHeader: incoming.secondHeader,
+      secondParagraph: incoming.secondParagraph,
     })
     .save(err => {
       if (err) {
