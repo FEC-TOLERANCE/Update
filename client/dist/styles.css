@@ -1,0 +1,148 @@
+.update-container {
+  display: grid;
+  height: 500px;
+  margin-right: 15%;
+  margin-left: 15%;
+  grid-template-rows: 2fr 3fr 1.5fr;
+  grid-template-columns: 1;
+  justify-content: center;
+  border: 1px solid lightgray;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.update-container :hover {
+  cursor: pointer;
+}
+
+.update-head {
+  grid-row: 1;
+  grid-column: 1;
+  justify-content: left;
+  border-bottom: 0.1rem solid lightgray;
+}
+
+.uCount{
+  padding-top: 35px;
+  padding-bottom: 15px;
+  grid-column: 1;
+  font-size: 16px;
+  color: gray;
+}
+
+.update-title{
+  font-size: 35px;
+  font-weight: 600px;
+  padding-bottom: 15px;
+}
+
+.icon {
+  border-radius: 50%;
+  max-width: 40px;
+  padding-bottom: 15px;
+  float: left;
+}
+
+.update-name{
+  padding-top: 10px;
+  float: inline-start;
+}
+
+.update-date{
+  color: gray;
+  float: inline-start;
+}
+
+.update-body {
+  grid-row: 2;
+}
+
+.para {
+  grid-column: 1;
+  padding-top: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.update-foot {
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr 2fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+#update-message {
+  grid-row: 2;
+  grid-column: 1;
+  text-align: left;
+  color: gray;
+  width: 20px;
+}
+.update-like{
+  grid-row: 2;
+  grid-column: 2;
+  align-items: right;
+}
+
+.update-read {
+  grid-row: 2;
+  grid-column: 4;
+  border: .5px solid lightgray;
+  text-align: center;
+  justify-content: center;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.heart {
+  width:20px;
+  background:
+   radial-gradient(circle at 60% 65%, gray 64%, transparent 65%) top left,
+   radial-gradient(circle at 40% 65%, gray 64%, transparent 65%) top right,
+   linear-gradient(to bottom left, gray 43%,transparent 43%) bottom left ,
+   linear-gradient(to bottom right,gray 43%,transparent 43%) bottom right;
+  background-size:50% 50%;
+  background-repeat:no-repeat;
+  display:inline-block;
+}
+.heart::before {
+  content:"";
+  display:block;
+  padding-top:100%;
+}
+
+.update-box {
+  position: relative;
+  display:inline-block
+}
+
+.image-text {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+  width: 60%;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  position: absolute;
+  z-index: 999;
+
+}
+#green {
+  background-color: lime;
+}
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 200px;
+  width: 900px;
+  height: 200px;
+  text-align: center;
+}
