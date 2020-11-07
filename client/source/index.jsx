@@ -37,7 +37,7 @@ class App extends React.Component {
         });
     }
     else {
-      axios.get(`http://ec2-3-21-228-43.us-east-2.compute.amazonaws.com:3007/updates/${newId}`)
+      axios.get(`http://ec2-3-128-76-202.us-east-2.compute.amazonaws.com:3007/updates/${newId}`)
       .then( (inc) => {
           console.log('amazon' + inc.data)
           this.setState(inc.data);
